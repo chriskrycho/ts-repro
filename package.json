@@ -6,6 +6,8 @@
   "author": "Chris Krycho <hello@chriskrycho.com>",
   "license": "MIT",
   "dependencies": {
+    "@olo/principled-forms": "link:/Users/ckrycho/dev/oss/principled-forms/packages/principled-forms",
+    "true-myth": "^2.2.4",
     "typescript": "3.2.4"
   }
 }
