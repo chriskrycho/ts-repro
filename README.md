@@ -66,7 +66,6 @@ Total time:           2.07s
 
 </details>
 
-
 ### TS 3.2.4
 
 (These are representative of results from 3.1+.)
@@ -127,6 +126,94 @@ Emit time:            0.02s
 Total time:           5.40s
 ✨  Done in 5.72s.
         5.96 real         8.94 user         0.31 sys
+```
+
+</details>
+
+## TS @next
+
+Here things get weird: the performance regression is fixed, *and also* a conditional type which worked correctly from 2.8 forward no longer works correctly.
+
+<details><summary><code>tsc --extendedDiagnostics</code> with optional (1.40s)</summary>
+
+```sh
+~> time yarn tsc --extendedDiagnostics
+yarn run v1.13.0
+$ /Users/ckrycho/dev/oss/ts-repro/node_modules/.bin/tsc --extendedDiagnostics
+Files:                  19
+Lines:               27622
+Nodes:              117098
+Identifiers:         41777
+Symbols:             34500
+Types:               14693
+Memory used:        83325K
+I/O Read time:       0.01s
+Parse time:          0.23s
+Program time:        0.27s
+Bind time:           0.13s
+Check time:          0.68s
+transformTime time:  0.01s
+commentTime time:    0.00s
+I/O Write time:      0.00s
+printTime time:      0.01s
+Emit time:           0.01s
+Total time:          1.09s
+✨  Done in 1.40s.
+        1.63 real         2.48 user         0.14 sys
+```
+
+</details>
+
+<details><summary><code>tsc --extendedDiagnostics</code> with <code>Maybe</code> (1.42s)</summary>
+
+```sh
+~> time yarn tsc --extendedDiagnostics
+yarn run v1.13.0
+$ /Users/ckrycho/dev/oss/ts-repro/node_modules/.bin/tsc --extendedDiagnostics
+index.ts:14:47 - error TS2741: Property 'email' is missing in type '{ age: RequiredField<number>; name: OptionalField<string>; }' but required in type 'Required<{ age: RequiredField<number>; name?: OptionalField<string> | undefined; email: RequiredField<Maybe<string>>; }>'.
+
+14 const formFromUser: FromModel<User> = user => ({
+                                                 ~~
+15   age: Field.required({ value: user.age }),
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+16   name: Field.optional({ value: user.name })
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+17 });
+   ~~
+
+  index.ts:11:3
+    11   email: Maybe<string>;
+         ~~~~~
+    'email' is declared here.
+  node_modules/@olo/principled-forms/form.d.ts:80:36
+    80 export declare type FromModel<T> = (model: T extends Maybe<infer U> ? Maybe<Partial<U>> : Partial<T>) => Form<T extends Maybe<infer U> ? U : T>;
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    The expected type comes from the return type of this signature.
+
+
+Found 1 error.
+
+Files:                  19
+Lines:               27621
+Nodes:              117085
+Identifiers:         41772
+Symbols:             34930
+Types:               14786
+Memory used:        80977K
+I/O Read time:       0.01s
+Parse time:          0.29s
+Program time:        0.34s
+Bind time:           0.13s
+Check time:          0.93s
+transformTime time:  0.01s
+commentTime time:    0.00s
+I/O Write time:      0.00s
+printTime time:      0.02s
+Emit time:           0.02s
+Total time:          1.42s
+error Command failed with exit code 2.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+        2.06 real         3.11 user         0.17 sys
 ```
 
 </details>

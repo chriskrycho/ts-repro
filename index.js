@@ -6,8 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var field_1 = __importDefault(require("@olo/principled-forms/field"));
 var formFromUser = function (user) { return ({
     age: field_1.default.required({ value: user.age }),
-    name: field_1.default.optional({ value: user.name }),
-    email: field_1.default.optional({ value: user.email })
+    name: field_1.default.optional({ value: user.name })
 }); };
 var a = formFromUser({
     age: 31,

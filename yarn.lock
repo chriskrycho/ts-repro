@@ -19,7 +19,7 @@
   resolved "https://registry.yarnpkg.com/true-myth/-/true-myth-2.2.4.tgz#cbab923b2c918d62ae50d05953fb10e0d1a9e234"
   integrity sha512-GxhD8jYkyeDJVo7PgbsERaUUCKkROe3Mi77RnGBwO63SeefgqnmxhulaYSgGFJufFCRfaHGdCdDHfsDf6/1aRQ==
 
-typescript@3.0:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.0.3.tgz#4853b3e275ecdaa27f78fda46dc273a7eb7fc1c8"
-  integrity sha512-kk80vLW9iGtjMnIv11qyxLqZm20UklzuR2tL0QAnDIygIUIemcZMxlMWudl9OOt76H3ntVzcTiddQ1/pAAJMYg==
+typescript@^3.4.0-dev.20190131:
+  version "3.4.0-dev.20190131"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.4.0-dev.20190131.tgz#13bd3720e3e32f817bf2a2863201fcca907c19e8"
+  integrity sha512-Jdqgexx4yP7DVGNvv6c1DdeiqFE3pCYY10Hq0HdyTgg+xCSr6pnJZ4u47ioM+/FyO6aww5881MOc+1nTAoLksA==

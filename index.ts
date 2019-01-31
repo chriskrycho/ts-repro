@@ -6,15 +6,15 @@ interface User {
   age: number;
   name?: string;
   // This is fine.
-  email?: string;
+  // email?: string;
   // This is very ***NOT FINE***.
-  // email: Maybe<string>;
+  email: Maybe<string>;
 }
 
 const formFromUser: FromModel<User> = user => ({
   age: Field.required({ value: user.age }),
   name: Field.optional({ value: user.name }),
-  email: Field.optional({ value: user.email })
+  email: Field.optional()
 });
 
 let a: Form<User> = formFromUser({

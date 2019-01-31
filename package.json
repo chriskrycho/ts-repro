@@ -8,6 +8,6 @@
   "dependencies": {
     "@olo/principled-forms": "0.2.1",
     "true-myth": "^2.2.4",
-    "typescript": "3.0"
+    "typescript": "^3.4.0-dev.20190131"
   }
 }
