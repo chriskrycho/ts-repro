@@ -1,0 +1,11 @@
+{
+  "name": "ts-repro",
+  "version": "1.0.0",
+  "description": "How conditional types and generics together go 💥",
+  "main": "index.js",
+  "author": "Chris Krycho <hello@chriskrycho.com>",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "3.2.4"
+  }
+}
