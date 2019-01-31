@@ -2,16 +2,24 @@
 # yarn lockfile v1
 
 
-"@olo/principled-forms@link:../principled-forms/packages/principled-forms":
-  version "0.0.0"
-  uid ""
+"@olo/principled-forms@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@olo/principled-forms/-/principled-forms-0.2.1.tgz#31b61995f8c620973c2d96470082975b74cca8ac"
+  integrity sha512-OUi3gSaldpbM4LR/t6WFuCTspNlEiDA4P2bFXdroVp8bbB9EMsJILe5vN9Oa9h17RHYk8SdDRTs7btlxTBIC/w==
+  dependencies:
+    "true-myth" "2.0.0"
 
-"true-myth@2.2.4", "true-myth@^2.2.4":
+"true-myth@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/true-myth/-/true-myth-2.0.0.tgz#dd5001af16c600e03039e03eb7a56c45615dfde9"
+  integrity sha1-3VABrxbGAOAwOeA+t6VsRWFd/ek=
+
+"true-myth@^2.2.4":
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/true-myth/-/true-myth-2.2.4.tgz#cbab923b2c918d62ae50d05953fb10e0d1a9e234"
   integrity sha512-GxhD8jYkyeDJVo7PgbsERaUUCKkROe3Mi77RnGBwO63SeefgqnmxhulaYSgGFJufFCRfaHGdCdDHfsDf6/1aRQ==
 
-typescript@3.2.4:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.2.4.tgz#c585cb952912263d915b462726ce244ba510ef3d"
-  integrity sha512-0RNDbSdEokBeEAkgNbxJ+BLwSManFy9TeXz8uW+48j/xhEXv1ePME60olyzw2XzUqUBNAYFeJadIqAgNqIACwg==
+typescript@3.0:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.0.3.tgz#4853b3e275ecdaa27f78fda46dc273a7eb7fc1c8"
+  integrity sha512-kk80vLW9iGtjMnIv11qyxLqZm20UklzuR2tL0QAnDIygIUIemcZMxlMWudl9OOt76H3ntVzcTiddQ1/pAAJMYg==
